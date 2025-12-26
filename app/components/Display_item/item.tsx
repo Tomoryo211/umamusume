@@ -6,7 +6,7 @@ export default function Item (){
         <div>
             <h1>タイトル</h1>
             <p>画像</p>
-            <p>そのキャラのコメント</p>
+            <p>キャラクターの説明文</p>
         </div>
         </>
     )
