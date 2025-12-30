@@ -4,7 +4,7 @@ import Styles from "./Display.module.scss";
 export default function Display_item(){
     return(
         <>
-            <div>
+            <div className={Styles.name}>
                 <h1>名前</h1>
                 <h2>タイトル</h2>
             </div>
