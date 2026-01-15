@@ -4,7 +4,6 @@
 import { useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
 import Item from "../Display_item/Item";
-
 import Agunes from "../../image/アブネスタキオン.png";
 import Aines from "../../image/アイネスフウジン.png";
 import Aston from "../../image/アストンマーチャン.png";
@@ -65,7 +64,6 @@ import Mihono from "../../image/ミホノブルボン.png";
 import Arudan from "../../image/メジロアルダン.png";
 import Brait from "../../image/メジロブライト.png";
 import Mac from "../../image/メジロマックイーン.png";
-// 全キャラ省略せずある前提
 
 const characters = [
     { name: "アグネスタキオン", src: Agunes },
@@ -131,20 +129,20 @@ const characters = [
 ];
 
 export default function Display() {
-  const tiltRefs = useRef<HTMLDivElement[]>([]);
+    const tiltRefs = useRef<HTMLDivElement[]>([]);
 
-  useEffect(() => {
-    tiltRefs.current.forEach((el) => {
-      if (!el) return;
+    useEffect(() => {
+        tiltRefs.current.forEach((el) => {
+        if (!el) return;
 
-      VanillaTilt.init(el, {
-        max: 15,
-        speed: 400,
-        glare: false,
-        scale: 1,
-      });
-    });
-  }, []);
+        VanillaTilt.init(el, {
+            max: 15,
+            speed: 400,
+            glare: false,
+            scale: 1,
+        });
+        });
+    }, []);
 
-  return <Item characters={characters} tiltRefs={tiltRefs} />;
+    return <Item characters={characters} tiltRefs={tiltRefs} />;
 }
