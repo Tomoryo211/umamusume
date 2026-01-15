@@ -5,12 +5,9 @@ import Styles from "./Display.module.scss";
 export default function Display_item(){
     return(
         <>
-            <div className={Styles.name}>
-            <Item />
-            </div>
             <div className={Styles.About}>
                 <p className={Styles.aboutitem}>ここからキャラ紹介を始める</p>
-
+                <Item />
             </div>
         </>
     )

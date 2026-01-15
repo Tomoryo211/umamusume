@@ -1,0 +1,10 @@
+.set{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    .image{
+        width: 20%;
+        height: 20%;
+        background: red;
+    }
+}
