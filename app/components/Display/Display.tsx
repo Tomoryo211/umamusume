@@ -7,7 +7,9 @@ export default function Display_item(){
         <>
             <div className={Styles.About}>
                 <p className={Styles.aboutitem}>ここからキャラ紹介を始める</p>
-                <Item />
+                <div className={Styles.set}>
+                    <Item />
+                </div>
             </div>
         </>
     )
