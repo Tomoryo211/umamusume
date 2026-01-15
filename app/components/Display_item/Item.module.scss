@@ -1,10 +1,47 @@
-.set{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-    .image{
-        width: 20%;
-        height: 20%;
-        background: red;
-    }
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  padding: 40px;
+}
+
+/* Tiltがかかるカード */
+.card {
+  position: relative;
+  height: 320px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1e222c, #151820);
+  transform-style: preserve-3d; // ←必須
+}
+
+/* 動かない背景 */
+.background {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1e222c, #151820);
+}
+
+/* キャラだけ浮かせる */
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  transform: translateZ(35px); // ←浮遊感の正体
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+.imageLayer img {
+  object-fit: contain;
+}
+
+/* 名前 */
+.name {
+  position: absolute;
+  bottom: 14px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  transform: translateZ(15px);
 }

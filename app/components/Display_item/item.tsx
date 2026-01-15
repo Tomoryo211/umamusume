@@ -1,162 +1,38 @@
-import Agunes from "../../image/アブネスタキオン.png";
-import Aines from "../../image/アイネスフウジン.png";
-import Aston from "../../image/アストンマーチャン.png";
-import Ikuno from "../../image/イクノディクタス.png";
-import Vibr from "../../image/ヴィブロス.png";
-import Virsn from "../../image/ヴィルシーナ.png";
-import Uin from "../../image/ウインバリアシオン.png";
-import Vodka from "../../image/ウォッカ.png";
-import Eisin from "../../image/エイシンフラッシュ.png";
-import Oguri from "../../image/オグリキャップ.png";
-import Orfe from "../../image/オルフェーブル.png";
-import Katuragi from "../../image/カツラギエース.png";
-import Karen from "../../image/カレンちゃん.png";
-import Kitasan from "../../image/キタサンブラック.png";
-import Siti from "../../image/ゴールドシチー.png";
-import Kopano from "../../image/コバノリッキー.png";
-import Sairen from "../../image/サイレンススズカ.png";
-import Sakura from "../../image/サクラチヨノオー.png";
-import SatonoK from "../../image/サトノクラウン.png";
-import SatanoD from "../../image/サトノダイヤモンド.png";
-import Jyent from "../../image/ジェンティルドンナ.png";
-import Syuvar from "../../image/シュヴァルグラン.png";
-import Sirius from "../../image/シリウスシンボリ.png";
-import Sthir from "../../image/スティルインラブ.png";
-import Special from "../../image/スペシャルウィーク.png";
-import Sumat from "../../image/スマートファルコ.png";
-import Super from "../../image/スーパークリーク.png";
-import Zenno from "../../image/ゼンノロブロイ.png";
-import Seiun from "../../image/セイウンスカイ.png";
-import Daitak from "../../image/ダイタクヘリオス.png";
-import Daiwa from "../../image/ダイワスカーレット.png";
-import Dant from "../../image/ダンツフレーム.png";
-import Taiki from "../../image/タイキシャトル.png";
-import Tamamo from "../../image/タマモクロス.png";
-import Tuin from "../../image/ツインターボ.png";
-import Dearing from "../../image/デアリングタクト.png";
-import Dhuran from "../../image/デュランダル.png";
-import Mente from "../../image/ドュラメンテ.png";
-import Dream from "../../image/ドリームジャーニー.png";
-import Teio from "../../image/トウカイテイオー.png";
-import Tousen from "../../image/トウセンジョーダン.png";
-import Toran from "../../image/トランセンド.png";
-import Nice from "../../image/ナイスネイチャ.png";
-import Neo from "../../image/ネオユニヴァース.png";
-import Urara from "../../image/ハルウララ.png";
-import Mirakuru from "../../image/ヒシミラクル.png";
-import Buena from "../../image/ブエナビスタ.png";
-import Fain from "../../image/ファインモーション.png";
-import Pandor from "../../image/フサイチパンドラ.png";
-import Kiseki from "../../image/フジキセキ.png";
-import Oso from "../../image/フリオーソ.png";
-import Tarumae from "../../image/ホッコータルマエ.png";
-import Matikane from "../../image/マチカネタンホイザ.png";
-import Mayano from "../../image/マヤノトップガン.png";
-import Maruzen from "../../image/マルゼンスキー.png";
-import Sibi from "../../image/ミスターシービー.png";
-import Mihono from "../../image/ミホノブルボン.png";
-import Arudan from "../../image/メジロアルダン.png";
-import Brait from "../../image/メジロブライト.png";
-import Mac from "../../image/メジロマックイーン.png";
 import Image from "next/image";
-import style from "./Item.module.scss";
-import { kill } from "process";
+import styles from "./Item.module.scss";
 
+type Character = {
+  name: string;
+  src: any;
+};
 
+type Props = {
+  characters: Character[];
+  tiltRefs: React.MutableRefObject<HTMLDivElement[]>;
+};
 
-export default function Item (){
-    return(
-        <>
-            <div className={style.set}>
-                <Image src={Agunes} className={style.image} alt="アグネスタキオン"/>
-                <Image src={Aines} className={style.image} alt="アイネスフウジン"/>
-                <Image src={Aston} className={style.image} alt="アストンマーちゃん"/>
-                <Image src={Ikuno} className={style.image} alt="イクノディスタス"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Vibr} className={style.image} alt="ヴィブロス"/>
-                <Image src={Virsn} className={style.image} alt="ヴィルシーナ"/>
-                <Image src={Uin} className={style.image} alt="ウインヴァリアシオン"/>
-                <Image src={Vodka} className={style.image} alt="ウォッカ"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Eisin} className={style.image} alt="エイシンフラッシュ"/>
-                <Image src={Oguri} className={style.image} alt="オグリキャップ"/>
-                <Image src={Orfe} className={style.image} alt="オルフェーブル"/>
-                <Image src={Katuragi} className={style.image} alt="カツラギエース"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Karen} className={style.image} alt="カレンチャン"/>
-                <Image src={Kitasan} className={style.image} alt="キタサンブラック"/>
-                <Image src={Siti} className={style.image} alt="ゴールドシチー"/>
-                <Image src={Kopano} className={style.image} alt="コパノリッキー"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Sairen} className={style.image} alt="サイレンススズカ"/>
-                <Image src={Sakura} className={style.image} alt="サクラチヨノオー"/>
-                <Image src={SatonoK} className={style.image} alt="サトノクラウン"/>
-                <Image src={SatanoD} className={style.image} alt="サトノダイヤモンド"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Jyent} className={style.image} alt="ジェンティルドンナ"/>
-                <Image src={Syuvar} className={style.image} alt="シュバルグラン"/>
-                <Image src={Sirius} className={style.image} alt="シリウスシンボリ"/>
-                <Image src={Sthir} className={style.image} alt="スティルインラブ"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Special} className={style.image} alt="スペシャルウィーク"/>
-                <Image src={Super} className={style.image} alt="スーパークリーク"/>
-                <Image src={Sumat} className={style.image} alt="スマートファルコ"/>
-                <Image src={Zenno} className={style.image} alt="ゼンノロブロイ"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Seiun} className={style.image} alt="セイウンスカイ"/>
-                <Image src={Daitak} className={style.image} alt="ダイタクヘリオス"/>
-                <Image src={Daiwa} className={style.image} alt="ダイワスカーレット"/>
-                <Image src={Dant} className={style.image} alt="ダンツフレーム"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Taiki} className={style.image} alt="タイキシャトル"/>
-                <Image src={Tamamo} className={style.image} alt="タマモクロス"/>
-                <Image src={Tuin} className={style.image} alt="ツインターボ"/>
-                <Image src={Dearing} className={style.image} alt="デアリングタクト"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Dhuran} className={style.image} alt="デュランダル"/>
-                <Image src={Mente} className={style.image} alt="ドゥラメンテ"/>
-                <Image src={Dream} className={style.image} alt="ドリームジャーニー"/>
-                <Image src={Teio} className={style.image} alt="トウカイテイオー"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Tousen} className={style.image} alt="トウセンジョーダン"/>
-                <Image src={Toran} className={style.image} alt="トランセンド"/>
-                <Image src={Nice} className={style.image} alt="ナイスネイチャ"/>
-                <Image src={Neo} className={style.image} alt="ネオユニヴァース"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Urara} className={style.image} alt="ハルウララ"/>
-                <Image src={Mirakuru} className={style.image} alt="ヒシミラクル"/>
-                <Image src={Buena} className={style.image} alt="ブエナビスタ"/>
-                <Image src={Fain} className={style.image} alt="ファインモーション"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Pandor} className={style.image} alt="フサイチパンドラ"/>
-                <Image src={Kiseki} className={style.image} alt="フジキセキ"/>
-                <Image src={Oso} className={style.image} alt="フリオーソ"/>
-                <Image src={Tarumae} className={style.image} alt="ホッコータルマエ"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Matikane} className={style.image} alt="マチカネタンホイザ"/>
-                <Image src={Mayano} className={style.image} alt="マヤノトップガン"/>
-                <Image src={Maruzen} className={style.image} alt="マルゼンスキー"/>
-                <Image src={Sibi} className={style.image} alt="ミスターシービー"/>
-            </div>
-            <div className={style.set}>
-                <Image src={Mihono} className={style.image} alt="ミホノブルボン"/>
-                <Image src={Arudan} className={style.image} alt="メジロアルダン"/>
-                <Image src={Brait} className={style.image} alt="メジロブライト"/>
-                <Image src={Mac} className={style.image} alt="メジロマックイーン"/>
-            </div>
-        </>
-    )
+export default function Item({ characters, tiltRefs }: Props) {
+  return (
+    <div className={styles.container}>
+      {characters.map((char, index) => (
+        <div
+          key={index}
+          ref={(el) => {
+            if (el) tiltRefs.current[index] = el;
+          }}
+          className={styles.card}
+        >
+          {/* 背景（動かない） */}
+          <div className={styles.background} />
+
+          {/* キャラだけ浮く */}
+          <div className={styles.imageLayer}>
+            <Image src={char.src} alt={char.name} fill />
+          </div>
+
+          <p className={styles.name}>{char.name}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
