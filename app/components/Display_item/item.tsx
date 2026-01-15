@@ -60,6 +60,7 @@ import Brait from "../../image/メジロブライト.png";
 import Mac from "../../image/メジロマックイーン.png";
 import Image from "next/image";
 import style from "./Item.module.scss";
+import { kill } from "process";
 
 
 
@@ -73,10 +74,88 @@ export default function Item (){
                 <Image src={Ikuno} className={style.image} alt="イクノディスタス"/>
             </div>
             <div className={style.set}>
-                <Image src={Agunes} className={style.image} alt="アグネスタキオン"/>
-                <Image src={Aines} className={style.image} alt="アイネスフウジン"/>
-                <Image src={Aston} className={style.image} alt="アストンマーちゃん"/>
-                <Image src={Ikuno} className={style.image} alt="イクノディスタス"/>
+                <Image src={Vibr} className={style.image} alt="ヴィブロス"/>
+                <Image src={Virsn} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Uin} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Vodka} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Eisin} className={style.image} alt="ヴィブロス"/>
+                <Image src={Oguri} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Orfe} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Katuragi} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Karen} className={style.image} alt="ヴィブロス"/>
+                <Image src={Kitasan} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Siti} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Kopano} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Sairen} className={style.image} alt="ヴィブロス"/>
+                <Image src={Sakura} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={SatonoK} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={SatanoD} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Jyent} className={style.image} alt="ヴィブロス"/>
+                <Image src={Syuvar} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Sirius} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Sthir} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Special} className={style.image} alt="ヴィブロス"/>
+                <Image src={Super} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Sumat} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Zenno} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Seiun} className={style.image} alt="ヴィブロス"/>
+                <Image src={Daitak} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Daiwa} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Dant} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Taiki} className={style.image} alt="ヴィブロス"/>
+                <Image src={Tamamo} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Tuin} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Dearing} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Dhuran} className={style.image} alt="ヴィブロス"/>
+                <Image src={Mente} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Dream} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Teio} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Tousen} className={style.image} alt="ヴィブロス"/>
+                <Image src={Toran} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Nice} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Neo} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Urara} className={style.image} alt="ヴィブロス"/>
+                <Image src={Mirakuru} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Buena} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Fain} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Pandor} className={style.image} alt="ヴィブロス"/>
+                <Image src={Kiseki} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Oso} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Tarumae} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Matikane} className={style.image} alt="ヴィブロス"/>
+                <Image src={Mayano} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Maruzen} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Sibi} className={style.image} alt="ウォッカ"/>
+            </div>
+            <div className={style.set}>
+                <Image src={Mihono} className={style.image} alt="ヴィブロス"/>
+                <Image src={Arudan} className={style.image} alt="ヴィルシーナ"/>
+                <Image src={Brait} className={style.image} alt="ウインヴァリアシオン"/>
+                <Image src={Mac} className={style.image} alt="ウォッカ"/>
             </div>
         </>
     )
