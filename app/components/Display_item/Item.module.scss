@@ -12,7 +12,7 @@
     height: 320px;
     border-radius: 20px;
     background: linear-gradient(145deg, #1e222c, #151820);
-    transform-style: preserve-3d; // ←必須
+    transform-style: preserve-3d; 
 }
 
 /* 動かない背景 */
@@ -21,17 +21,21 @@
     inset: 0;
     border-radius: 20px;
     background: linear-gradient(
-        145deg,
-        #2a2f3a,
-        #141821
+        135deg,
+        #2c2f4a,
+        #1b1e33
     );
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.05),
+        0 20px 40px rgba(0, 0, 0, 0.6);
 }
+
 
 /* キャラだけ浮かせる */
 .imageLayer {
     position: absolute;
     inset: 0;
-    transform: translateZ(35px); // ←浮遊感の正体
+    transform: translateZ(40px); // ←浮遊感の正体
     transform-style: preserve-3d;
     pointer-events: none;
 }
@@ -47,6 +51,6 @@
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 15px;
     transform: translateZ(15px);
 }

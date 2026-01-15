@@ -22,10 +22,10 @@ export default function Item({ characters, tiltRefs }: Props) {
             }}
             className={styles.card}
             >
-            {/* 背景（動かない） */}
+            {/* 背景 */}
             <div className={styles.background} />
 
-            {/* キャラだけ浮く */}
+            {/* キャラ */}
             <div className={styles.imageLayer}>
                 <Image src={char.src} alt={char.name} fill />
             </div>
