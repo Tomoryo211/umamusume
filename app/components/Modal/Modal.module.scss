@@ -1,15 +1,43 @@
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: radial-gradient(
+        circle at top,
+        rgba(40, 40, 40, 0.85),
+        rgba(0, 0, 0, 0.95)
+    );
     display: grid;
     place-items: center;
     z-index: 1000;
 }
 
 .modal {
-    background: white;
+    position: relative;
+    width: 420px;
+    max-width: 90%;
     padding: 24px;
-    border-radius: 16px;
-    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(
+    160deg,
+        #111,
+        #1e1e1e,
+        #090909
+    );
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+    color: #fcfcfc;
+    transform-style: preserve-3d;
+}
+.modalImageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 16px;
+    transform-style: preserve-3d;
+}
+
+.modalImage {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.8));
+    transform: translateZ(25px);
 }
