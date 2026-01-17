@@ -31,10 +31,7 @@ export default function Modal({ character, onClose }: Props) {
 
     return (
         <div className={styles.overlay} onClick={onClose}>
-        <div
-            className={styles.modal}
-            onClick={(e) => e.stopPropagation()}
-            ref={tiltRef}
+        <div className={styles.modal} onClick={(e) => e.stopPropagation()}ref={tiltRef}
         >
             <div className={styles.modalImageWrap}>
             <Image
@@ -47,9 +44,9 @@ export default function Modal({ character, onClose }: Props) {
             </div>
 
             <h2>{character.name}</h2>
-            <p>ここにキャラの詳細説明を書くペン</p>
+            <p>みんな元気</p>
 
-            <button onClick={onClose}>閉じる</button>
+            <button onClick={onClose} className={styles.btn}>閉じる</button>
         </div>
         </div>
     );
