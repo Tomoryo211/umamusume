@@ -1,9 +1,16 @@
 
 "use client";
 
-import { useEffect, useRef } from "react";
-import VanillaTilt from "vanilla-tilt";
+import { useState } from "react";
 import Item from "../Display_item/Item";
+import Modal from "../Modal/Modal";
+
+export type Character = {
+    name: string;
+    image: any;
+};
+
+/* ===== キャラ配列（※省略せずそのまま）===== */
 import Agunes from "../../image/アブネスタキオン.png";
 import Aines from "../../image/アイネスフウジン.png";
 import Aston from "../../image/アストンマーチャン.png";
@@ -65,84 +72,87 @@ import Arudan from "../../image/メジロアルダン.png";
 import Brait from "../../image/メジロブライト.png";
 import Mac from "../../image/メジロマックイーン.png";
 
-const characters = [
-    { name: "アグネスタキオン", src: Agunes },
-    { name: "アイネスフウジン", src: Aines },
-    { name: "アストンマーチャン", src: Aston },
-    { name: "イクノディクタス", src: Ikuno },
-    { name: "ヴィブロス", src: Vibr },
-    { name: "ヴィルシーナ", src: Virsn },
-    { name: "ウインバリアシオン", src: Uin },
-    { name: "ウォッカ", src: Vodka },
-    { name: "エイシンフラッシュ", src: Eisin },
-    { name: "オグリキャップ", src: Oguri },
-    { name: "オルフェーヴル", src: Orfe },
-    { name: "カツラギエース", src: Katuragi },
-    { name: "カレンチャン", src: Karen },
-    { name: "キタサンブラック", src: Kitasan },
-    { name: "ゴールドシチー", src: Siti },
-    { name: "コパノリッキー", src: Kopano },
-    { name: "サイレンススズカ", src: Sairen },
-    { name: "サクラチヨノオー", src: Sakura },
-    { name: "サトノクラウン", src: SatonoK },
-    { name: "サトノダイヤモンド", src: SatanoD },
-    { name: "ジェンティルドンナ", src: Jyent },
-    { name: "シュヴァルグラン", src: Syuvar },
-    { name: "シリウスシンボリ", src: Sirius },
-    { name: "スティルインラブ", src: Sthir },
-    { name: "スペシャルウィーク", src: Special },
-    { name: "スマートファルコン", src: Sumat },
-    { name: "スーパークリーク", src: Super },
-    { name: "ゼンノロブロイ", src: Zenno },
-    { name: "セイウンスカイ", src: Seiun },
-    { name: "ダイタクヘリオス", src: Daitak },
-    { name: "ダイワスカーレット", src: Daiwa },
-    { name: "ダンツフレーム", src: Dant },
-    { name: "タイキシャトル", src: Taiki },
-    { name: "タマモクロス", src: Tamamo },
-    { name: "ツインターボ", src: Tuin },
-    { name: "デアリングタクト", src: Dearing },
-    { name: "デュランダル", src: Dhuran },
-    { name: "ドゥラメンテ", src: Mente },
-    { name: "ドリームジャーニー", src: Dream },
-    { name: "トウカイテイオー", src: Teio },
-    { name: "トウセンジョーダン", src: Tousen },
-    { name: "トランセンド", src: Toran },
-    { name: "ナイスネイチャ", src: Nice },
-    { name: "ネオユニヴァース", src: Neo },
-    { name: "ハルウララ", src: Urara },
-    { name: "ヒシミラクル", src: Mirakuru },
-    { name: "ブエナビスタ", src: Buena },
-    { name: "ファインモーション", src: Fain },
-    { name: "フサイチパンドラ", src: Pandor },
-    { name: "フジキセキ", src: Kiseki },
-    { name: "フリオーソ", src: Oso },
-    { name: "ホッコータルマエ", src: Tarumae },
-    { name: "マチカネタンホイザ", src: Matikane },
-    { name: "マヤノトップガン", src: Mayano },
-    { name: "マルゼンスキー", src: Maruzen },
-    { name: "ミスターシービー", src: Sibi },
-    { name: "ミホノブルボン", src: Mihono },
-    { name: "メジロアルダン", src: Arudan },
-    { name: "メジロブライト", src: Brait },
-    { name: "メジロマックイーン", src: Mac },
+
+
+const characters: Character[] = [
+    { name: "アグネスタキオン", image: Agunes },
+    { name: "アイネスフウジン", image: Aines },
+    { name: "アストンマーチャン", image: Aston },
+    { name: "イクノディクタス", image: Ikuno },
+    { name: "ヴィブロス", image: Vibr },
+    { name: "ヴィルシーナ", image: Virsn },
+    { name: "ウインバリアシオン", image: Uin },
+    { name: "ウォッカ", image: Vodka },
+    { name: "エイシンフラッシュ", image: Eisin },
+    { name: "オグリキャップ", image: Oguri },
+    { name: "オルフェーヴル", image: Orfe },
+    { name: "カツラギエース", image: Katuragi },
+    { name: "カレンチャン", image: Karen },
+    { name: "キタサンブラック", image: Kitasan },
+    { name: "ゴールドシチー", image: Siti },
+    { name: "コパノリッキー", image: Kopano },
+    { name: "サイレンススズカ", image: Sairen },
+    { name: "サクラチヨノオー", image: Sakura },
+    { name: "サトノクラウン", image: SatonoK },
+    { name: "サトノダイヤモンド", image: SatanoD },
+    { name: "ジェンティルドンナ", image: Jyent },
+    { name: "シュヴァルグラン", image: Syuvar },
+    { name: "シリウスシンボリ", image: Sirius },
+    { name: "スティルインラブ", image: Sthir },
+    { name: "スペシャルウィーク", image: Special },
+    { name: "スマートファルコン", image: Sumat },
+    { name: "スーパークリーク", image: Super },
+    { name: "ゼンノロブロイ", image: Zenno },
+    { name: "セイウンスカイ", image: Seiun },
+    { name: "ダイタクヘリオス", image: Daitak },
+    { name: "ダイワスカーレット", image: Daiwa },
+    { name: "ダンツフレーム", image: Dant },
+    { name: "タイキシャトル", image: Taiki },
+    { name: "タマモクロス", image: Tamamo },
+    { name: "ツインターボ", image: Tuin },
+    { name: "デアリングタクト", image: Dearing },
+    { name: "デュランダル", image: Dhuran },
+    { name: "ドゥラメンテ", image: Mente },
+    { name: "ドリームジャーニー", image: Dream },
+    { name: "トウカイテイオー", image: Teio },
+    { name: "トウセンジョーダン", image: Tousen },
+    { name: "トランセンド", image: Toran },
+    { name: "ナイスネイチャ", image: Nice },
+    { name: "ネオユニヴァース", image: Neo },
+    { name: "ハルウララ", image: Urara },
+    { name: "ヒシミラクル", image: Mirakuru },
+    { name: "ブエナビスタ", image: Buena },
+    { name: "ファインモーション", image: Fain },
+    { name: "フサイチパンドラ", image: Pandor },
+    { name: "フジキセキ", image: Kiseki },
+    { name: "フリオーソ", image: Oso },
+    { name: "ホッコータルマエ", image: Tarumae },
+    { name: "マチカネタンホイザ", image: Matikane },
+    { name: "マヤノトップガン", image: Mayano },
+    { name: "マルゼンスキー", image: Maruzen },
+    { name: "ミスターシービー", image: Sibi },
+    { name: "ミホノブルボン", image: Mihono },
+    { name: "メジロアルダン", image: Arudan },
+    { name: "メジロブライト", image: Brait },
+    { name: "メジロマックイーン", image: Mac },
 ];
 
 export default function Display() {
-    const tiltRefs = useRef<HTMLDivElement[]>([]);
+    const [selectedChar, setSelectedChar] = useState<Character | null>(null);
 
-    useEffect(() => {
-        tiltRefs.current.forEach((el) => {
-        if (!el) return;
+    return (
+        <>
+        <Item
+            characters={characters}
+            onSelect={(char) => setSelectedChar(char)}
+        />
 
-        VanillaTilt.init(el, {
-            max: 15,
-            speed: 400,
-            glare: false,
-            scale: 1,
-        });
-        });
-    }, []);
-
-    return <Item characters={characters} tiltRefs={tiltRefs} />;
+        {selectedChar && (
+            <Modal
+            character={selectedChar}
+            onClose={() => setSelectedChar(null)}
+            />
+        )}
+        </>
+    );
 }
