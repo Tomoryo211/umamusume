@@ -31,23 +31,20 @@ export default function Modal({ character, onClose }: Props) {
 
     return (
         <div className={styles.overlay} onClick={onClose}>
-        <div className={styles.modal} onClick={(e) => e.stopPropagation()}ref={tiltRef}
-        >
-            <div className={styles.modalImageWrap}>
-            <Image
-                src={character.image}
-                alt={character.name}
-                width={300}
-                height={400}
-                className={styles.modalImage}
-            />
+            <div className={styles.modal} onClick={(e) => e.stopPropagation()}ref={tiltRef}>
+                <div className={styles.modalImageWrap}>
+                    <Image
+                        src={character.image}
+                        alt={character.name}
+                        width={300}
+                        height={400}
+                        className={styles.modalImage}
+                    />
+                </div>
+                <h2>{character.name}</h2>
+                <p>ウマ娘</p>
+                <button onClick={onClose} className={styles.btn}>閉じる</button>
             </div>
-
-            <h2>{character.name}</h2>
-            <p>みんな元気</p>
-
-            <button onClick={onClose} className={styles.btn}>閉じる</button>
-        </div>
         </div>
     );
 }
