@@ -27,27 +27,25 @@ useEffect(() => {
 
     return (
         <div className={styles.container}>
-        {characters.map((char, index) => (
+            {characters.map((char, index) => (
             <div
                 key={char.name}
                 ref={(el) => (tiltRefs.current[index] = el)}
                 className={styles.card}
                 onClick={() => onSelect(char)}
             >
-            {/* 背景 */}
-            <div className={styles.background} />
-
-            {/* 浮く */}
-            <div className={styles.imageLayer}>
-                <Image
-                src={char.image}
-                alt={char.name}
-                fill
-                className={styles.image}
-                />
-            </div>
-
-            <p className={styles.name}>{char.name}</p>
+                {/* 背景 */}
+                <div className={styles.background} />
+                {/* 浮く */}
+                <div className={styles.imageLayer}>
+                    <Image
+                        src={char.image}
+                        alt={char.name}
+                        fill
+                        className={styles.image}
+                        />
+                    </div>
+                <p className={styles.name}>{char.name}</p>
             </div>
         ))}
         </div>
