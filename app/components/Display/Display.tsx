@@ -10,7 +10,6 @@ export type Character = {
     image: any;
 };
 
-/* ===== キャラ配列（※省略せずそのまま）===== */
 import Agunes from "../../image/アブネスタキオン.png";
 import Aines from "../../image/アイネスフウジン.png";
 import Aston from "../../image/アストンマーチャン.png";

@@ -29,10 +29,10 @@ useEffect(() => {
         <div className={styles.container}>
         {characters.map((char, index) => (
             <div
-            key={char.name}
-            ref={(el) => (tiltRefs.current[index] = el)}
-            className={styles.card}
-            onClick={() => onSelect(char)}
+                key={char.name}
+                ref={(el) => (tiltRefs.current[index] = el)}
+                className={styles.card}
+                onClick={() => onSelect(char)}
             >
             {/* 背景 */}
             <div className={styles.background} />
