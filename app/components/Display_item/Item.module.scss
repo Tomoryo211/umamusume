@@ -28,7 +28,8 @@
     .imageLayer {
         position: absolute;
         inset: 0;
-        transform: translateZ(50px);
+        transform: translateZ(100px);
+        perspective: 1000px;
     }
     .image {
         object-fit: contain;
